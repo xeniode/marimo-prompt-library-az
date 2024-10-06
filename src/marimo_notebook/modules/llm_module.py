@@ -233,3 +233,28 @@ def build_gemini_1_2_002():
     gemini_1_5_flash_002.key = GEMINI_API_KEY
 
     return gemini_1_5_pro_002, gemini_1_5_flash_002
+
+
+def build_azure_gpt4o():
+    """
+    Builds and configures an Azure GPT-4o model instance using environment variables.
+
+    Retrieves necessary configuration details from environment variables and assigns them
+    to the corresponding attributes of the Azure GPT-4o model instance.
+
+    Returns:
+        llm.Model: An instance of the Azure GPT-4o model configured with the specified
+        endpoint, API key, deployment name, and API version.
+    """
+    AZURE_OPENAI_API_ENDPOINT = os.getenv("AZURE_OPENAI_API_ENDPOINT")
+    AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
+    AZURE_OPENAI_API_DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_API_DEPLOYMENT_NAME")
+    AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION")
+
+    azure_gpt4o_model: llm.Model = llm.get_model("azure-gpt-4o")
+    azure_gpt4o_model.endpoint = AZURE_OPENAI_API_ENDPOINT
+    azure_gpt4o_model.key = AZURE_OPENAI_API_KEY
+    azure_gpt4o_model.deployment_name = AZURE_OPENAI_API_DEPLOYMENT_NAME
+    azure_gpt4o_model.api_version = AZURE_OPENAI_API_VERSION
+
+    return azure_gpt4o_model

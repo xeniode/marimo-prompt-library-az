@@ -475,6 +475,18 @@ wheels = [
 ]
 
 [[package]]
+name = "llm-azure"
+version = "0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llm" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d6/de/de358e11a94e889d11d9507ae940b9d46b9e233add250a2be7a0f03b94ac/llm_azure-0.3.tar.gz", hash = "sha256:7e2c5c4a5be2a3b4061ad641e347296994d480663875768ed7b9f051e3aac506", size = 7045 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a8/00/67fa375f33003658287ba0ae4f547ce993688aaab488d0960cecd7bab8cb/llm_azure-0.3-py3-none-any.whl", hash = "sha256:857e7cb21957a2483df487e8f3cd3a445313a7cc31facd87fa484ce2cbbb68c6", size = 7527 },
+]
+
+[[package]]
 name = "llm-claude"
 version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -573,6 +585,7 @@ source = { editable = "." }
 dependencies = [
     { name = "altair" },
     { name = "llm" },
+    { name = "llm-azure" },
     { name = "llm-claude" },
     { name = "llm-claude-3" },
     { name = "llm-gemini" },
@@ -594,6 +607,7 @@ dependencies = [
 requires-dist = [
     { name = "altair", specifier = ">=5.4.1" },
     { name = "llm", specifier = ">=0.16" },
+    { name = "llm-azure", specifier = ">=0.3" },
     { name = "llm-claude", specifier = ">=0.4.0" },
     { name = "llm-claude-3", specifier = ">=0.4.1" },
     { name = "llm-gemini", specifier = ">=0.1a5" },

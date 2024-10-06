@@ -11,6 +11,7 @@ def __():
     import src.marimo_notebook.modules.prompt_library_module as prompt_library_module
     import json
     import pyperclip
+
     return json, llm_module, mo, prompt_library_module, pyperclip
 
 
@@ -18,6 +19,7 @@ def __():
 def __(llm_module):
     llm_o1_mini, llm_o1_preview = llm_module.build_o1_series()
     llm_gpt_4o_latest, llm_gpt_4o_mini = llm_module.build_openai_latest_and_fastest()
+    llm_azure_gpt4o = llm_module.build_azure_gpt4o()
     # llm_sonnet = llm_module.build_sonnet_3_5()
     # gemini_1_5_pro, gemini_1_5_flash = llm_module.build_gemini_duo()
     # gemini_1_5_pro_2, gemini_1_5_flash_2 = llm_module.build_gemini_1_2_002()
@@ -28,6 +30,7 @@ def __(llm_module):
         "o1-preview": llm_o1_preview,
         "gpt-4o-latest": llm_gpt_4o_latest,
         "gpt-4o-mini": llm_gpt_4o_mini,
+        "azure-gpt-4o": llm_azure_gpt4o,
         # "sonnet-3.5": llm_sonnet,
         # "gemini-1-5-pro": gemini_1_5_pro,
         # "gemini-1-5-flash": gemini_1_5_flash,
@@ -41,6 +44,7 @@ def __(llm_module):
         llm_gpt_4o_mini,
         llm_o1_mini,
         llm_o1_preview,
+        llm_azure_gpt4o,
         models,
     )
 
